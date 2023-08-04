@@ -9,47 +9,9 @@ const Home = () => {
   const [rec, setrec] = useState('');
   const [visaversa, setvisaversa] = useState(true);
   const [reff, setReff] = useState(0);
-
-  // console.log(val);
-
-  // const fetchval = re => {
-  //   setVal(val => val + re);
-  // };
-  // const oper = el => {
-  //   if (pre === '/') {
-  //     setData(Number(data) / Number(val));
-  //     setVal('');
-  //     setPre('');
-  //   } else if (pre === '*') {
-  //     setData(Number(data) * Number(val));
-  //     setVal('');
-  //     setPre('');
-  //   } else if (pre === '-') {
-  //     setData(Number(data) - Number(val));
-  //     setVal('');
-  //     setPre('');
-  //   } else if (pre === '+') {
-  //     setData(Number(data) + Number(val));
-  //     setVal('');
-  //     setPre('');
-  //   } else if (pre === '=') {
-  //     // val ? setData(val) : setVal('');
-  //     setPre('');
-  //     setVal('');
-  //     setData(data);
-  //   } else {
-  //     data ? setData(data) : setData(val);
-  //     setPre(el);
-  //     setVal('');
-  //   }
-  // };
-
-  // const dummy = em => {
-  //   setVal(val => Number(val) / 100);
-  // };
   const inv = ln => {
     if (val) {
-      if (val[0] == '+') {
+      if (val[0] === '+') {
         let v = val.split('');
         v[0] = '-';
         v = v.join('');
@@ -177,7 +139,6 @@ const Home = () => {
             fun={fetchval}
           />
         </View>
-        
         <View style={styles.brows}>
           <Buttons
             colr="gray"
@@ -313,8 +274,6 @@ const styles = StyleSheet.create({
   },
   box2: {display: 'flex', gap: 16, marginBottom: 32},
   box1: {
-    // position: 'relative',
-    // bottom: 10,
     flex: 1,
     borderBottomWidth: 1,
     borderColor: 'gray',
