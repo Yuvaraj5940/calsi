@@ -6,7 +6,6 @@ const Home = () => {
   const [val, setVal] = useState('');
   const [data, setData] = useState('');
   const [pre, setPre] = useState('');
-  const [rec, setrec] = useState('');
   const [visaversa, setvisaversa] = useState(true);
   const [reff, setReff] = useState(0);
   const inv = ln => {
@@ -33,19 +32,16 @@ const Home = () => {
   const fetchval = re => {
     if (!Number(re)) {
       if (re === '.') {
-        setrec(rec => rec + re);
         let temp = val;
         temp += re;
         setVal(temp);
       } else if (re === '0') {
-        setrec(rec => rec + re);
         let temp = val;
         temp += re;
         setVal(temp);
       } else if (re === '%') {
         setData(Number(val) / 100);
         setVal(Number(val) / 100);
-        setrec(Number(val) / 100);
       } else {
         setReff(reff + 1);
         if (reff > 0) {
@@ -72,15 +68,12 @@ const Home = () => {
           setData(val);
         }
         if (re === '=') {
-          setrec('');
           setvisaversa(true);
         }
         setVal(val => '');
         setPre(re);
-        setrec(rec => rec + re);
       }
     } else {
-      setrec(rec => rec + re);
       let temp = val;
       temp += re;
       setVal(temp);
@@ -91,20 +84,18 @@ const Home = () => {
     setData('');
     setVal('');
     setReff(0);
-    setrec('');
     setvisaversa(true);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.box1}>
-        <View style={{flex: 1, flexDirection: 'column-reverse', margin: 16}}>
+        <View style={{ flexDirection: 'column-reverse', marginHorizontal: 16}}>
           <Text style={styles.box1text}>{val === '' ? 0 : val}</Text>
+        </View>
+        <View style={{ flexDirection: 'column-reverse', marginHorizontal: 16}}>
           <Text style={[styles.box1text, {fontSize: 30, color: '#fcf003'}]}>
             {data ? `= ${data}` : ''}
-          </Text>
-          <Text style={[styles.box1text, {fontSize: 20, color: '#404040'}]}>
-            {rec}
           </Text>
         </View>
       </View>
