@@ -12,7 +12,9 @@ const Buttons = props => {
   return (
     <View
       style={[styles.box, {backgroundColor: props.colr, flexGrow: props.grow}]}>
-      <TouchableOpacity style={[styles.touchable]} onPress={()=>props.fun(props?.btext)}>
+      <TouchableOpacity
+        style={[styles.touchable]}
+        onPress={() => props.fun(props?.btext)}>
         <Text
           style={[styles.text, {fontSize: props.textsize, color: props?.tclr}]}>
           {props?.btext}
@@ -30,8 +32,6 @@ const styles = StyleSheet.create({
     height: width / 4 - (width / 4 - 16 * 5),
     backgroundColor: 'gray',
     borderRadius: width / 4,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   text: {
     fontSize: 20,

@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Dimensions, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import React, {useState} from 'react';
 import Buttons from '../components/button';
 
@@ -90,10 +90,10 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.box1}>
-        <View style={{ flexDirection: 'column-reverse', marginHorizontal: 16}}>
+        <View className="pl-4">
           <Text style={styles.box1text}>{val === '' ? 0 : val}</Text>
         </View>
-        <View style={{ flexDirection: 'column-reverse', marginHorizontal: 16}}>
+        <View className="pl-4">
           <Text style={[styles.box1text, {fontSize: 30, color: '#fcf003'}]}>
             {data ? `= ${data}` : ''}
           </Text>
